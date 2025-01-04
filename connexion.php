@@ -8,7 +8,7 @@ class Session{
     }
     
     public function sessionUtilisateur(string $identifiant, string $mot_de_passe){
-        $requete = $this->pdo->prepare("SELECT * FROM where pseudo =:identifiant");
+        $requete = $this->pdo->prepare("SELECT * FROM utilisateurs where pseudo =:identifiant");
         $requete -> bindParam(':identifiant', $identifiant,PDO::PARAM_STR);
         $requete->execute();
     
